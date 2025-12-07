@@ -1,0 +1,394 @@
+/* ---- Reset e Configurações Globais ---- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-green: #28a745; /* Verde principal */
+    --light-green: #f0fdf4;  /* Fundo verde claro */
+    --white: #ffffff;
+    --gray-light: #f4f7f6;
+    --gray-medium: #ced4da;
+    --gray-dark: #6c757d;
+    --text-color: #343a40;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra profunda */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--gray-light);
+    color: var(--text-color);
+}
+
+/* ---- Layout Principal ---- */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---- Barra Lateral (Sidebar) ---- */
+.sidebar {
+    width: 260px;
+    background-color: var(--white);
+    border-right: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 10;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 2rem;
+}
+
+/* --- AJUSTE DA LOGO --- */
+.sidebar-header .logo {
+    height: 42px; /* Tamanho ideal para o ícone */
+    width: auto;
+    border-radius: 8px; /* Deixa o ícone com cantos arredondados (estilo app) */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra leve na logo */
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--gray-dark);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav .nav-link i {
+    width: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-nav .nav-link:hover {
+    background-color: var(--light-green);
+    color: var(--primary-green);
+}
+
+/* Animação do ícone no hover */
+.sidebar-nav .nav-link:hover i {
+    transform: translateX(3px);
+}
+
+.sidebar-nav .nav-link.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+/* ---- Conteúdo Principal ---- */
+.main-content {
+    flex-grow: 1;
+    padding: 2rem;
+    background-color: var(--light-green);
+    overflow-y: auto;
+}
+
+.main-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.main-header .subtitle {
+    font-size: 1rem;
+    color: var(--gray-dark);
+    font-weight: 400;
+}
+
+.main-header.with-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* ---- Cards e Widgets ---- */
+.stat-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid #e9ecef;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--gray-dark);
+}
+
+.card h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--gray-dark);
+}
+
+.widgets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card.large-widget, .card.full-width-widget {
+    min-height: 300px;
+}
+
+.card.full-width-widget {
+    grid-column: 1 / -1;
+}
+
+.placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: var(--gray-light);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-medium);
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.placeholder::after {
+    content: '(Espaço para gráfico ou dados)';
+}
+
+/* ---- Botões ---- */
+.btn-primary {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(40, 167, 69, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+}
+
+.btn-primary:active {
+    transform: scale(0.96);
+}
+
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--primary-green);
+    border: 1px solid var(--primary-green);
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--light-green);
+    transform: translateY(-2px);
+}
+
+/* ---- Elementos de Listas e Tabs ---- */
+.content-header, .list-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.content-header {
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 1rem;
+    margin-top: 0;
+}
+
+.tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.tab-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--gray-dark);
+    font-weight: 500;
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.tab-link:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+}
+
+.tab-link:active {
+    transform: scale(0.96);
+}
+
+.tab-link.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.sub-tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    border-bottom: 1px solid var(--gray-medium);
+}
+
+.sub-tab-link {
+    padding: 0.5rem 0.25rem;
+    margin-bottom: -1px;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--gray-dark);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.sub-tab-link:hover { color: var(--text-color); }
+.sub-tab-link.active { color: var(--primary-green); border-bottom-color: var(--primary-green); }
+
+/* ---- Inputs e Busca ---- */
+.search-bar { position: relative; }
+.search-bar i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--gray-medium); }
+.search-bar input {
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--gray-medium);
+    min-width: 300px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.15);
+    transform: translateY(-1px);
+}
+.search-bar.large { flex-grow: 1; min-width: 300px; }
+.search-form { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; align-items: center; }
+
+/* ---- Empty State ---- */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+    margin-top: 1rem;
+}
+.empty-state .empty-icon { font-size: 4rem; color: var(--gray-medium); margin-bottom: 1.5rem; }
+.empty-state h3 { font-size: 1.5rem; font-weight: 600; color: var(--text-color); }
+
+/* ---- Filtros ---- */
+.filter-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.filter-group { display: flex; flex-direction: column; }
+.filter-group label { font-size: 0.85rem; margin-bottom: 0.25rem; color: var(--gray-dark); }
+.filter-group input, .filter-group select {
+    padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--gray-medium);
+    background-color: var(--white); font-family: 'Poppins', sans-serif; transition: all 0.3s ease;
+}
+.filter-group input:focus, .filter-group select:focus {
+    outline: none; border-color: var(--primary-green); box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.15);
+}
+
+/* ---- Ícones e Cores ---- */
+.card-header .icon-gray { color: #6c757d; }
+.card-header .icon-green { color: #28a745; }
+.card-header .icon-yellow { color: #ffc107; }
+.card-header .icon-red { color: #dc3545; }
+
+/* Animação Pulsar para alertas */
+@keyframes pulse-soft { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+.card-header .icon-red, .card-header .icon-yellow { animation: pulse-soft 2s infinite ease-in-out; }
+
+/* ---- Transparência e Banner ---- */
+.commitment-banner {
+    background-color: var(--primary-green); color: var(--white); border-radius: 12px;
+    padding: 2.5rem 2rem; text-align: center; margin-top: 1.5rem;
+    box-shadow: 0 10px 25px rgba(40, 167, 69, 0.3);
+}
+.commitment-banner .banner-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+/* ---- Animações de Entrada ---- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.tab-content.active { animation: fadeInUp 0.4s ease-out forwards; }

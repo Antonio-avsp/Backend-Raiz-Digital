@@ -1,0 +1,17 @@
+# Nome da Aplicação
+spring.application.name=Raiz Digital API
+
+# --- CONFIGURAÇÃO DO MYSQL ---
+# Substitua 'raiz_digital_db' pelo nome que você quer dar ao seu banco
+spring.datasource.url=jdbc:mysql://localhost:3306/raiz_digital?createDatabaseIfNotExist=true&serverTimezone=UTC
+# Seu usuário do MySQL (geralmente é root)
+spring.datasource.username=root
+# Sua senha do MySQL (se não tiver senha, deixe vazio após o igual)
+spring.datasource.password=root
+
+# --- CONFIGURAÇÃO DO JPA (HIBERNATE) ---
+# update: cria/atualiza as tabelas automaticamente baseado nas suas classes Java
+spring.jpa.hibernate.ddl-auto=update
+# Mostra os comandos SQL no console (bom para debug)
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
