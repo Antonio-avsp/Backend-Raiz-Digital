@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - P.I Sementes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="logo.png" alt="Logo Sementes" class="logo">
+                <span>Raiz Digital</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Início</span></a></li>
+                    <li><a href="cadastro.html" class="nav-link"><i class="fas fa-edit"></i><span>Cadastro</span></a></li>
+                    <li><a href="estoque.html" class="nav-link"><i class="fas fa-boxes"></i><span>Estoque</span></a></li>
+                    <li><a href="logistica.html" class="nav-link"><i class="fas fa-truck"></i><span>Logística</span></a></li>
+                    <li><a href="entregas.html" class="nav-link"><i class="fas fa-shipping-fast"></i><span>Entregas</span></a></li>
+                    <li><a href="rastreabilidade.html" class="nav-link"><i class="fas fa-search-location"></i><span>Rastreabilidade</span></a></li>
+                    <li><a href="relatorios.html" class="nav-link active"><i class="fas fa-chart-bar"></i><span>Relatórios</span></a></li>
+                    <li><a href="transparencia.html" class="nav-link"><i class="fas fa-eye"></i><span>Transparência</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="main-header with-button">
+                <div class="header-text-container"><h1>Relatórios e Análises</h1><p class="subtitle">Visualize e segmente os dados do sistema</p></div>
+                <button class="btn-secondary"><i class="fas fa-download"></i>Exportar relatório</button>
+            </header>
+            <div class="card full-width-widget">
+                <div class="filter-header"><i class="fas fa-filter"></i><h3>Filtros</h3></div>
+                <div class="filter-controls">
+                    <div class="filter-group"><label for="date-start">Data Início</label><input type="date" id="date-start" value="2025-10-23"></div>
+                    <div class="filter-group"><label for="date-end">Data Fim</label><input type="date" id="date-end" value="2025-10-30"></div>
+                    <div class="filter-group"><label for="select-especie">Espécie</label><select id="select-especie"><option>Todas as Espécies</option></select></div>
+                    <div class="filter-group"><label for="select-municipio">Municípios</label><select id="select-municipio"><option>Todos os municípios</option></select></div>
+                </div>
+            </div>
+            <div class="sub-tab-nav">
+                <a href="#" class="sub-tab-link active" data-target="tab-distribuicao">Distribuição</a>
+                <a href="#" class="sub-tab-link" data-target="tab-temporal">Temporal</a>
+                <a href="#" class="sub-tab-link" data-target="tab-estoque">Estoque</a>
+                <a href="#" class="sub-tab-link" data-target="tab-divergencia">Divergência</a>
+            </div>
+            <div id="tab-distribuicao" class="tab-content active">
+                <div class="widgets">
+                    <div class="card large-widget"><h3>Distribuição por Espécie</h3><div class="placeholder"></div></div>
+                    <div class="card large-widget"><h3>Top Municípios</h3><div class="placeholder"></div></div>
+                </div>
+            </div>
+            <div id="tab-temporal" class="tab-content" style="display: none;">
+                <div class="card full-width-widget"><h3>Evolução Temporal</h3><div class="placeholder"></div></div>
+            </div>
+            <div id="tab-estoque" class="tab-content" style="display: none;">
+                <div class="widgets">
+                    <div class="card large-widget"><h3>Entrada vs Saída</h3><div class="placeholder"></div></div>
+                    <div class="card large-widget"><h3>Perdas e Ajustes</h3><div class="placeholder"></div></div>
+                </div>
+            </div>
+            <div id="tab-divergencia" class="tab-content" style="display: none;">
+                <div class="card full-width-widget">
+                    <div class="list-header"><h3>Relatório de Divergências</h3></div>
+                    <div class="empty-state"><i class="fas fa-check-circle empty-icon"></i><h3>Nenhuma divergência encontrada</h3></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle - P.I Sementes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="logo.png" alt="Logo Sementes" class="logo">
+                <span>Raiz Digital</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i><span>Início</span></a></li>
+                    <li><a href="cadastro.html" class="nav-link"><i class="fas fa-edit"></i><span>Cadastro</span></a></li>
+                    <li><a href="estoque.html" class="nav-link"><i class="fas fa-boxes"></i><span>Estoque</span></a></li>
+                    <li><a href="logistica.html" class="nav-link"><i class="fas fa-truck"></i><span>Logística</span></a></li>
+                    <li><a href="entregas.html" class="nav-link"><i class="fas fa-shipping-fast"></i><span>Entregas</span></a></li>
+                    <li><a href="rastreabilidade.html" class="nav-link"><i class="fas fa-search-location"></i><span>Rastreabilidade</span></a></li>
+                    <li><a href="relatorios.html" class="nav-link"><i class="fas fa-chart-bar"></i><span>Relatórios</span></a></li>
+                    <li><a href="transparencia.html" class="nav-link"><i class="fas fa-eye"></i><span>Transparência</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Painel de Controle</h1>
+            </header>
+            <div class="stat-cards">
+                <div class="card">
+                    <div class="card-header"><span>Estoque total</span><i class="fas fa-archive icon-gray"></i></div>
+                    <h2>0.0 ton</h2><p>Sementes armazenadas</p>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span>Total Distribuído</span><i class="fas fa-chart-line icon-green"></i></div>
+                    <h2>0.0 ton</h2><p>Enviado aos agricultores</p>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span>Agricultores atendidos</span><i class="fas fa-users icon-yellow"></i></div>
+                    <h2>0.0 ton</h2><p>Atendidos neste período</p>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span>Entregas pendentes</span><i class="fas fa-clock icon-red"></i></div>
+                    <h2>0</h2><p>Pedidos em andamento</p>
+                </div>
+            </div>
+            <div class="widgets">
+                <div class="card large-widget"><h3>Status da Ordem de expedição</h3><div class="placeholder"></div></div>
+                <div class="card large-widget"><h3>Lotes próximos ao vencimento</h3><div class="placeholder"></div></div>
+            </div>
+            <div class="widgets">
+                 <div class="card full-width-widget"><h3>Atividades Recentes</h3><div class="placeholder"></div></div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Estoque - P.I Sementes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="logo.png" alt="Logo Sementes" class="logo">
+                <span>Raiz Digital</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Início</span></a></li>
+                    <li><a href="cadastro.html" class="nav-link"><i class="fas fa-edit"></i><span>Cadastro</span></a></li>
+                    <li><a href="estoque.html" class="nav-link active"><i class="fas fa-boxes"></i><span>Estoque</span></a></li>
+                    <li><a href="logistica.html" class="nav-link"><i class="fas fa-truck"></i><span>Logística</span></a></li>
+                    <li><a href="entregas.html" class="nav-link"><i class="fas fa-shipping-fast"></i><span>Entregas</span></a></li>
+                    <li><a href="rastreabilidade.html" class="nav-link"><i class="fas fa-search-location"></i><span>Rastreabilidade</span></a></li>
+                    <li><a href="relatorios.html" class="nav-link"><i class="fas fa-chart-bar"></i><span>Relatórios</span></a></li>
+                    <li><a href="transparencia.html" class="nav-link"><i class="fas fa-eye"></i><span>Transparência</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Gestão de Estoque</h1>
+                <p class="subtitle">Gerenciamento de lotes cadastrados</p>
+            </header>
+            <div class="stat-cards">
+                <div class="card"><div class="card-header"><span>Estoque total</span><i class="fas fa-check-circle icon-green"></i></div><h2>0.0 ton</h2></div>
+                <div class="card"><div class="card-header"><span>Lotes ativos</span><i class="fas fa-chart-pie icon-yellow"></i></div><h2>0.0 ton</h2></div>
+                <div class="card"><div class="card-header"><span>Vencendo em 30 dias</span><i class="fas fa-exclamation-triangle icon-red"></i></div><h2>0</h2></div>
+            </div>
+            <div class="tab-nav">
+                <a href="#" class="tab-link active" data-target="tab-lotes"><i class="fas fa-boxes"></i><span>Lotes</span></a>
+                <a href="#" class="tab-link" data-target="tab-movimentacoes"><i class="fas fa-exchange-alt"></i><span>Movimentações</span></a>
+                <a href="#" class="tab-link" data-target="tab-armazem"><i class="fas fa-warehouse"></i><span>Por armazém</span></a>
+            </div>
+            <div id="tab-lotes" class="tab-content active">
+                <div class="card full-width-widget">
+                    <div class="list-header"><div class="search-bar"><i class="fas fa-search"></i><input type="text" placeholder="Buscar lotes..."></div><button class="btn-primary"><i class="fas fa-plus"></i>Novo lote</button></div>
+                    <div class="empty-state"><i class="fas fa-box-open empty-icon"></i><h3>Nenhum lote cadastrado</h3></div>
+                </div>
+            </div>
+            <div id="tab-movimentacoes" class="tab-content" style="display: none;">
+                <div class="card full-width-widget">
+                    <div class="list-header"><h3>Histórico de Movimentações</h3></div>
+                    <div class="empty-state"><i class="fas fa-exchange-alt empty-icon"></i><h3>Nenhuma movimentação recente</h3></div>
+                </div>
+            </div>
+            <div id="tab-armazem" class="tab-content" style="display: none;">
+                <div class="card full-width-widget">
+                    <div class="list-header"><h3>Visão Geral dos Armazéns</h3></div>
+                    <div class="empty-state"><i class="fas fa-warehouse empty-icon"></i><h3>Nenhum armazém vinculado</h3></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
